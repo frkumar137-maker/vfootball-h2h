@@ -1,0 +1,70 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VFootball H2H</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }.box {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+input {
+  width: 90%;
+  padding: 12px;
+  margin: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#result {
+  margin-top: 20px;
+  text-align: left;
+}
+
+  </style>
+</head><body>
+  <div class="box">
+    <h1>VFootball H2H</h1><input id="team1" type="text" placeholder="Team 1">
+<input id="team2" type="text" placeholder="Team 2">
+
+<button onclick="showH2H()">Search H2H</button>
+
+<div id="result"></div>
+
+  </div>  <script>
+    function showH2H() {
+      const team1 = document.getElementById("team1").value;
+      const team2 = document.getElementById("team2").value;
+
+      if (!team1 || !team2) {
+        document.getElementById("result").innerHTML =
+          "<p>Rubuta sunayen teams biyu.</p>";
+        return;
+      }
+
+      document.getElementById("result").innerHTML = `
+        <h2>${team1} vs ${team2}</h2>
+        <p><b>H2H:</b> Babu data tukuna.</p>
+        <p><b>Last 5:</b> Babu data tukuna.</p>
+        <p><b>Last 10:</b> Babu data tukuna.</p>
+      `;
+    }
+  </script></body>
+</html>
